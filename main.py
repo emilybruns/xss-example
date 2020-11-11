@@ -25,13 +25,13 @@ def home():
 
 <h2>Wisdom From Your Fellow Classmates</h2>
 """
-    
+
     for m in Message.select():
         body += """
-<div class="message">
-{}
-</div>
-""".format(m.content)
+    <div class="message">
+    {}
+    </div>
+    """.format(m.content.replace('<', '&lt;').replace('>', '&gt;'))
 
     return body 
 
